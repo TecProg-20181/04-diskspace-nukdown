@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
+from contracts import contract
 
 import argparse
 import os
@@ -35,7 +36,7 @@ args = parser.parse_args()
 
 
 # ==== Disk Space ====
-
+@contract(command='str', returns='str')
 def subprocess_check_output(command):
     return subprocess.check_output(command.strip().split(' '))
 
