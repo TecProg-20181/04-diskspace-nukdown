@@ -40,7 +40,7 @@ args = parser.parse_args()
 def subprocess_check_output(command):
     return subprocess.check_output(command.strip().split(' '))
 
-
+@contract(blocks='int,>=0', returns='str')
 def bytes_to_readable(blocks):
     byts = blocks * 512
     readable_bytes = byts
